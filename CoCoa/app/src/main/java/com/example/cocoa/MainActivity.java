@@ -28,13 +28,12 @@ public class MainActivity extends AppCompatActivity {
     String Sdata3;
     String Sdata4;
 
+    String list = "";
+
     TextView Infected;
     TextView Dead;
     TextView Suspected;
     TextView Test;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         Suspected = (TextView)findViewById(R.id.suspected);
         Test = (TextView)findViewById(R.id.test);
         DataLoad();
-
-        Infected.setText(list);
     }
 
     public void DataLoad() {
@@ -56,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         jsoupAsyncTask.execute();
     }
 
-    String list = "";
+
 
     private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
         @Override
@@ -68,12 +65,15 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
             try {
                 Document doc = Jsoup.connect(Url).get();
+<<<<<<< HEAD
                 Elements titles = doc.select("ul[s_listin_dot]").eq(0).select("li");
+=======
+                Elements titles = doc.select("ul[s_listin_dot]").select("li").eq(0);
+>>>>>>> f8de26c759f81f4ab643b880feeaf7d61f1b5801
 
                 for (Element e : titles) {
-                    list += e.select("li").text().trim() + "\n";
+                    list += e/*.select("li")*/.text().trim() + "\n";
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -83,14 +83,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             Sdata1 = list;
+            Infected.setText(Sdata1);
         }
     }
-
 /*
     @Override
-    public void onClick(View v){
-
-
-    }
+    public void onClick(View v){ }
 */
 }
