@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     String Sdata3;
     String Sdata4;
 
+    String list = "";
+
     TextView Infected;
     TextView Dead;
     TextView Suspected;
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         jsoupAsyncTask.execute();
     }
 
-    String list = "";
+
 
     private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
         @Override
@@ -66,9 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 Elements titles = doc.select("ul[s_listin_dot]").select("li").eq(0);
 
                 for (Element e : titles) {
-                    list += e./*("li").*/text().trim() + "\n";
+                    list += e/*.select("li")*/.text().trim() + "\n";
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
