@@ -74,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             String[] tmp;
             tmp = list.split("명");
-            Infected.setText(tmp[0]);
-            Dead.setText(tmp[1]);
-            Suspected.setText(tmp[2]);
-            Test.setText(tmp[3]);
+            Infected.setText(tmp[0]+"명");
+            Dead.setText(tmp[1]+"명");
+            Suspected.setText(tmp[2]+"명");
+            Test.setText(tmp[3]+"명");
         }
     }
 /*
