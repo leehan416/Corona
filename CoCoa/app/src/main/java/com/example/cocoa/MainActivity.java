@@ -27,10 +27,25 @@ public class MainActivity extends AppCompatActivity {
     String Sdata2;
     String Sdata3;
     String Sdata4;
+
+    TextView Infected;
+    TextView Dead;
+    TextView Suspected;
+    TextView Test;
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Infected = (TextView)findViewById(R.id.infected);
+        Dead = (TextView)findViewById(R.id.dead);
+        Suspected = (TextView)findViewById(R.id.suspected);
+        Test = (TextView)findViewById(R.id.test);
+
     }
 
     public void CalltheMeal() {
@@ -68,6 +83,13 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             Sdata1 = list;
         }
+    }
+
+
+    @Override
+    public void onClick(View v){
+
+
     }
 
 }
