@@ -15,6 +15,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TextView Dead;
     TextView Suspected;
     TextView Test;
+    SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
         Dead = (TextView)findViewById(R.id.dead);
         Suspected = (TextView)findViewById(R.id.suspected);
         Test = (TextView)findViewById(R.id.test);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
+            @Override
+            public  void onRefresh(){
+                //새로고침
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
         DataLoad();
     }
 
