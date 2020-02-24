@@ -45,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
         Dead = (TextView)findViewById(R.id.dead);
         Suspected = (TextView)findViewById(R.id.suspected);
         Test = (TextView)findViewById(R.id.test);
+        DataLoad();
 
+        Infected.setText(list);
     }
 
-    public void CalltheMeal() {
-        //Call the Meal 고침
+    public void DataLoad() {
         list = "";
         JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
         jsoupAsyncTask.execute();
@@ -85,11 +86,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+/*
     @Override
     public void onClick(View v){
 
 
     }
-
+*/
 }
