@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
             try {
                 Document doc = Jsoup.connect(Url).get();
-                Elements titles = doc.select("ul[s_listin_dot]");
+                Elements titles = doc.select("ul[s_listin_dot]").eq(0).select("li");
 
                 for (Element e : titles) {
                     list += e.select("li").text().trim() + "\n";
