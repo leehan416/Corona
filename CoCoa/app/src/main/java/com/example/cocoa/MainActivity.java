@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
     TextView Suspected;
     TextView Test;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         Suspected = (TextView)findViewById(R.id.suspected);
         Test = (TextView)findViewById(R.id.test);
         DataLoad();
-
-        Infected.setText(list);
     }
 
     public void DataLoad() {
@@ -68,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
             try {
                 Document doc = Jsoup.connect(Url).get();
-                Elements titles = doc.select("ul[s_listin_dot]");
+                Elements titles = doc.select("ul[s_listin_dot]").select("li").eq(0);
 
                 for (Element e : titles) {
-                    list += e.select("li").text().trim() + "\n";
+                    list += e./*("li").*/text().trim() + "\n";
                 }
 
             } catch (IOException e) {
@@ -83,14 +78,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             Sdata1 = list;
+            Infected.setText(Sdata1);
         }
     }
-
 /*
     @Override
-    public void onClick(View v){
-
-
-    }
+    public void onClick(View v){ }
 */
 }
