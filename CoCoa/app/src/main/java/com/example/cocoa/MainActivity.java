@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Suspected = (TextView)findViewById(R.id.suspected);
         Test = (TextView)findViewById(R.id.test);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
+
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
             @Override
             public  void onRefresh(){
