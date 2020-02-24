@@ -23,10 +23,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     String Url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=&brdGubun=&ncvContSeq=&contSeq=&board_id=&gubun=";
-    String Sdata1;
-    String Sdata2;
-    String Sdata3;
-    String Sdata4;
+
 
     TextView Infected;
     TextView Dead;
@@ -63,16 +60,10 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
             try {
                 Document doc = Jsoup.connect(Url).get();
-<<<<<<< HEAD
-                Elements titles = doc.select("ul[s_listin_dot]").eq(0).select("li");
-=======
-                Elements titles = doc.select("ul[s_listin_dot]").select("li").eq(0);
->>>>>>> f8de26c759f81f4ab643b880feeaf7d61f1b5801
-
+                Elements titles = doc.select("ul[class=s_listin_dot]").eq(0);
                 for (Element e : titles) {
-                    list += e./*("li").*/text().trim() + "\n";
+                    list = e.select("li").text().trim() + "\n";
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -81,8 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            Sdata1 = list;
-            Infected.setText(Sdata1);
+            String[] tmp;
+            tmp = list.split("명");
+            Infected.setText(tmp[0]);
+            Dead.setText(tmp[1]);
+            Suspected.setText(tmp[2]);
+            Test.setText(tmp[3]);
         }
     }
 /*
