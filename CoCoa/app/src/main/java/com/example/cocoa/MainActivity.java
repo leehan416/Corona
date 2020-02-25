@@ -30,27 +30,18 @@ public class MainActivity extends AppCompatActivity {
     TextView Dead;
     TextView Suspected;
     TextView Test;
-    SwipeRefreshLayout mSwipeRefreshLayout;
+    //SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         Infected = (TextView)findViewById(R.id.infected);
         Dead = (TextView)findViewById(R.id.dead);
         Suspected = (TextView)findViewById(R.id.suspected);
         Test = (TextView)findViewById(R.id.test);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
-
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
-            @Override
-            public  void onRefresh(){
-                //새로고침
-                mSwipeRefreshLayout.setRefreshing(false);
-            }
-        });
-
+*/
         DataLoad();
     }
 
@@ -86,10 +77,10 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             String[] tmp;
             tmp = list.split("명");
-            Infected.setText(tmp[0]+"명");
-            Dead.setText(tmp[1]+"명");
-            Suspected.setText(tmp[2]+"명");
-            Test.setText(tmp[3]+"명");
+            //Infected.setText(tmp[0]+"명");
+            //Dead.setText(tmp[1]+"명");
+            //Suspected.setText(tmp[2]+"명");
+            //Test.setText(tmp[3]+"명");
         }
     }
 /*
