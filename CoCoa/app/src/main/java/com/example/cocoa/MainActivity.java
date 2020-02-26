@@ -1,12 +1,9 @@
 package com.example.cocoa;
 
-import android.content.Intent;
+import com.example.cocoa.R;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -15,10 +12,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import com.example.cocoa.R;
-import android.os.Bundle;
 
 import java.io.IOException;
 
@@ -31,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
     String Url2 = "https://www.coronanow.kr/";
 
 
-    TextView Today;
-    TextView Infected;
-    TextView Dead;
-    TextView Suspected;
-    TextView Test;
+    TextView Today = null;
+    TextView Infected= null;
+    TextView Dead= null;
+    TextView Suspected= null;
+    TextView Test= null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
         Dead = (TextView)findViewById(R.id.dead);
         Suspected = (TextView)findViewById(R.id.suspect);
         Test = (TextView)findViewById(R.id.test);
-        DataLoad();
-
+        try {
+            DataLoad();
+        }
+        catch (Exception e){
+        }
     }
 
     public void DataLoad() {
@@ -88,20 +84,18 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
+            /*
             String[] tmp = new String[5];
-
-            tmp = list.split("명");
-
             tmp[0] = tmp[0].substring(7, tmp[0].length()-1);
             tmp[1] = tmp[1].substring(12, tmp[1].length()-1);
             tmp[2] = tmp[2].substring(6, tmp[2].length()-1);
             tmp[3] = tmp[3].substring(7, tmp[3].length()-1);
 
-
-            Infected.setText(tmp[0]+"명");
-            Dead.setText(tmp[1]+"명");
-            Suspected.setText(tmp[2]+"명");
-            Test.setText(tmp[3]+"명");
+            tmp = list.split("명");
+            Infected.setText("확진자\n"+ tmp[0] +"명");
+            Dead.setText("사망자\n"+ tmp[1] +"명");
+            Suspected.setText("의심환자\n"+tmp[2] +"명");
+            Test.setText("검사중\n" + tmp[3] +"명");
             tmp[4] = ""; // 이거가 오늘 숫자
             boolean b = false;
             String temp = "";
@@ -118,7 +112,8 @@ public class MainActivity extends AppCompatActivity {
                     tmp[4] += temp;
                 }
             }
-            Today.setText(tmp[4]);
+            Today.setText("오늘의 추가 확진자는\n" + tmp[4]+" 명 입니다.");
+        */
         }
     }
 }
