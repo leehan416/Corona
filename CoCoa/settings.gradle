@@ -1,6 +1,6 @@
 <<<<<<< HEAD
-include ':app', ':lib'
+include ':app', ':libs'
 =======
-include ':app', ':lib2'
+include ':app'
 >>>>>>> parent of 1895c6a... zxc
 rootProject.name='CoCoa'
