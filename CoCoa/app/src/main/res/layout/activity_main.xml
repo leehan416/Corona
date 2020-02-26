@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -16,16 +17,28 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/today_1"
+                android:textColor="@color/font"
+                android:fontFamily="@font/goyang"
+                android:layout_width="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textSize="40dp" />
 
             <TextView
                 android:id="@+id/today"
+                android:textColor="@color/font"
+                android:fontFamily="@font/goyang"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:gravity="top"
-                android:text="오늘의 확신자"
-                android:textSize="50dp" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textSize="50dp"/>
         </LinearLayout>
 
 
@@ -41,20 +54,27 @@
                 android:id="@+id/infected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/rect"
+                android:fontFamily="@font/goyang"
                 android:gravity="center"
-                android:text="void"
+                android:text=""
+                android:textColor="@color/font"
                 android:textSize="30dp" />
 
             <TextView
-                android:id="@+id/dead"
+                android:id="@+id/test"
+                android:textColor="@color/font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/rect"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+
+                android:fontFamily="@font/goyang"
+                android:background="@drawable/rect0"
                 android:gravity="center"
-                android:text="void"
+                android:text=""
                 android:textSize="30dp" />
 
         </LinearLayout>
@@ -68,22 +88,29 @@
 
             <TextView
                 android:id="@+id/suspect"
+                android:textColor="@color/font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/rect"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/goyang"
+                android:background="@drawable/rect1"
                 android:gravity="center"
-                android:text="void"
+                android:text=""
                 android:textSize="30dp" />
 
             <TextView
-                android:id="@+id/test"
+                android:id="@+id/dead"
+                android:textColor="@color/font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/rect"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="15dp"
+
+                android:background="@drawable/rect2"
+                android:fontFamily="@font/goyang"
                 android:gravity="center"
-                android:text="void"
+                android:text=""
                 android:textSize="30dp" />
         </LinearLayout>
     </LinearLayout>

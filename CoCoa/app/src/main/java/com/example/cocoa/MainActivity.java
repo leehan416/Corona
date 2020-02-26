@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     TextView Today;
+    TextView Today_1;
     TextView Infected;
     TextView Dead;
     TextView Suspected;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         Infected = (TextView)findViewById(R.id.infected);
         Today = (TextView)findViewById(R.id.today);
+        Today_1 = (TextView)findViewById(R.id.today_1);
         Dead = (TextView)findViewById(R.id.dead);
         Suspected = (TextView)findViewById(R.id.suspect);
         Test = (TextView)findViewById(R.id.test);
@@ -94,10 +96,10 @@ public class MainActivity extends AppCompatActivity {
             tmp[3] = tmp[3].substring(7, tmp[3].length());
 
 
-            Infected.setText("확진자\n"+ tmp[0] +"명");
-            Dead.setText("사망자\n"+ tmp[1] +"명");
-            Suspected.setText("의심환자\n"+tmp[2] +"명");
-            Test.setText("검사중\n" + tmp[3] +"명");
+            Infected.setText("확진환자\n"+ tmp[0] +"명");
+            Dead.setText("격리해제\n"+ tmp[1] +"명");
+            Suspected.setText("사망자\n"+tmp[2] +"명");
+            Test.setText("검사진행\n" + tmp[3] +"명");
             tmp[4] = ""; // 이거가 오늘 숫자
             boolean b = false;
             String temp = "";
@@ -114,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
                     tmp[4] += temp;
                 }
             }
-            Today.setText("오늘의 추가 확진자는\n" + tmp[4]+" 명 입니다.");
+            Today_1.setText("\n오늘의 추가 확진자는");
+            Today.setText(tmp[4]+"명 입니다.");
         }
     }
 }
