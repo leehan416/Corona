@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
--->
     <LinearLayout
         android:layout_width="410dp"
         android:layout_height="602dp"
@@ -44,17 +38,18 @@
                 android:id="@+id/infected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:background="@drawable/rect"
+                android:gravity="center"
                 android:text="void" />
 
             <TextView
                 android:id="@+id/dead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:background="@drawable/rect"
+                android:gravity="center"
                 android:text="void" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -82,7 +77,7 @@
                 android:text="TextView" />
         </LinearLayout>
     </LinearLayout>
-    <!--/ScrollView-->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

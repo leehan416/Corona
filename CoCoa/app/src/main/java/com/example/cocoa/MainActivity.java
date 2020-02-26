@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
     String Url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=&brdGubun=&ncvContSeq=&contSeq=&board_id=&gubun=";
 
+    String list = "";
 
     TextView Infected;
     TextView Dead;
     TextView Suspected;
     TextView Test;
-    //SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
             DataLoad();
         }
         catch (Exception e){
-
-
         }
     }
 
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         jsoupAsyncTask.execute();
     }
 
-    String list = "";
+
 
     private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
         @Override
@@ -88,8 +86,4 @@ public class MainActivity extends AppCompatActivity {
             Test.setText(tmp[3]+"명");
         }
     }
-/*
-    @Override
-    public void onClick(View v){ }
-*/
 }
