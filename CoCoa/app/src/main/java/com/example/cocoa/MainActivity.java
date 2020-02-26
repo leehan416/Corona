@@ -17,6 +17,7 @@ import org.jsoup.select.Elements;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.cocoa.R;
 import android.os.Bundle;
 
 import java.io.IOException;
