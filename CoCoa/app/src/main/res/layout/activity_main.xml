@@ -44,7 +44,7 @@
                 android:id="@+id/infected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:background="@drawable/rect"
                 android:text="void" />
 
@@ -52,7 +52,7 @@
                 android:id="@+id/dead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:background="@drawable/rect"
                 android:text="void" />
         </LinearLayout>
@@ -68,7 +68,7 @@
                 android:id="@+id/suspect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:background="@drawable/rect"
                 android:text="TextView"
                 />
@@ -77,7 +77,7 @@
                 android:id="@+id/test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:background="@drawable/rect"
                 android:text="TextView" />
         </LinearLayout>
