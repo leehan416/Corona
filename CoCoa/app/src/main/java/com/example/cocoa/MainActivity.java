@@ -46,11 +46,8 @@ public class MainActivity extends AppCompatActivity {
         Dead = (TextView)findViewById(R.id.dead);
         Suspected = (TextView)findViewById(R.id.suspect);
         Test = (TextView)findViewById(R.id.test);
-        try {
-            DataLoad();
-        }
-        catch (Exception e){
-        }
+        DataLoad();
+
     }
 
     public void DataLoad() {
@@ -91,15 +88,15 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             String[] tmp = new String[5];
-<<<<<<< HEAD
-            tmp[0].substring(7, tmp[0].length()-1);
-            tmp[1].substring(12, tmp[1].length()-1);
-            tmp[2].substring(6, tmp[2].length()-1);
-            tmp[3].substring(7, tmp[3].length()-1);
 
-=======
->>>>>>> parent of 67a8771... alhpa_ver
             tmp = list.split("명");
+
+            tmp[0] = tmp[0].substring(7, tmp[0].length()-1);
+            tmp[1] = tmp[1].substring(12, tmp[1].length()-1);
+            tmp[2] = tmp[2].substring(6, tmp[2].length()-1);
+            tmp[3] = tmp[3].substring(7, tmp[3].length()-1);
+
+
             Infected.setText(tmp[0]+"명");
             Dead.setText(tmp[1]+"명");
             Suspected.setText(tmp[2]+"명");
