@@ -24,13 +24,13 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     String Url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=&brdGubun=&ncvContSeq=&contSeq=&board_id=&gubun=";
-<<<<<<< HEAD
 
     String list = "";
-=======
-    String Url2 = "https://www.coronanow.kr/";
->>>>>>> 79841f7e4ade11ef70ff8a2c2f9869afd9d89505
 
+    String Url2 = "https://www.coronanow.kr/";
+
+
+    TextView Today;
     TextView Infected;
     TextView Dead;
     TextView Suspected;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Infected = (TextView)findViewById(R.id.infected);
+        Today = (TextView)findViewById(R.id.today);
         Dead = (TextView)findViewById(R.id.dead);
         Suspected = (TextView)findViewById(R.id.suspect);
         Test = (TextView)findViewById(R.id.test);
@@ -58,13 +59,9 @@ public class MainActivity extends AppCompatActivity {
         jsoupAsyncTask.execute();
     }
 
-<<<<<<< HEAD
 
-
-=======
     String list = "";
     String list2 = "";
->>>>>>> 79841f7e4ade11ef70ff8a2c2f9869afd9d89505
     private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute() {
@@ -100,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             Dead.setText(tmp[1]+"명");
             Suspected.setText(tmp[2]+"명");
             Test.setText(tmp[3]+"명");
-            tmp[4] = "";
+            tmp[4] = ""; // 이거가 오늘 숫자
             boolean b = false;
             String temp = "";
             for( int i = 0; i < list2.length(); i++){
@@ -116,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     tmp[4] += temp;
                 }
             }
-            Test.setText(tmp[4]);
+            Today.setText(tmp[4]);
         }
     }
 }
