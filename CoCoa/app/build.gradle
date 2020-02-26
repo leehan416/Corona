@@ -29,9 +29,14 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     >>>>>>> parent of 1895c6a
     implementation files('libs\\jsoup-1.12.1.jar') ... zxc
+=======
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+>>>>>>> parent of 1895c6a... zxc
 =======
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
