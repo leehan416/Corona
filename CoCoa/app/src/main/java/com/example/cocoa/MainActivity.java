@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
     String Url2 = "https://www.coronanow.kr/";
 
 
-    TextView Today = null;
-    TextView Infected= null;
-    TextView Dead= null;
-    TextView Suspected= null;
-    TextView Test= null;
+    TextView Today;
+    TextView Infected;
+    TextView Dead;
+    TextView Suspected;
+    TextView Test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,14 +84,16 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            /*
             String[] tmp = new String[5];
+            
+            tmp = list.split("명");
+
             tmp[0] = tmp[0].substring(7, tmp[0].length()-1);
             tmp[1] = tmp[1].substring(12, tmp[1].length()-1);
             tmp[2] = tmp[2].substring(6, tmp[2].length()-1);
             tmp[3] = tmp[3].substring(7, tmp[3].length()-1);
 
-            tmp = list.split("명");
+
             Infected.setText("확진자\n"+ tmp[0] +"명");
             Dead.setText("사망자\n"+ tmp[1] +"명");
             Suspected.setText("의심환자\n"+tmp[2] +"명");
@@ -113,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             Today.setText("오늘의 추가 확진자는\n" + tmp[4]+" 명 입니다.");
-        */
         }
     }
 }
