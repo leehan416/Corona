@@ -24,8 +24,12 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     String Url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=&brdGubun=&ncvContSeq=&contSeq=&board_id=&gubun=";
+<<<<<<< HEAD
 
     String list = "";
+=======
+    String Url2 = "https://www.coronanow.kr/";
+>>>>>>> 79841f7e4ade11ef70ff8a2c2f9869afd9d89505
 
     TextView Infected;
     TextView Dead;
@@ -54,8 +58,13 @@ public class MainActivity extends AppCompatActivity {
         jsoupAsyncTask.execute();
     }
 
+<<<<<<< HEAD
 
 
+=======
+    String list = "";
+    String list2 = "";
+>>>>>>> 79841f7e4ade11ef70ff8a2c2f9869afd9d89505
     private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute() {
@@ -70,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 for (Element e : titles) {
                     list = e.select("li").text().trim() + "\n";
                 }
+                doc = Jsoup.connect(Url2).get();
+                titles = doc.select("div[class=card-body2]") .eq(1)   ;
+                for (Element e : titles) {
+                    list2 += e.text().trim();
+                }
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -78,12 +94,29 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            String[] tmp;
+            String[] tmp = new String[5];
             tmp = list.split("명");
             Infected.setText(tmp[0]+"명");
             Dead.setText(tmp[1]+"명");
             Suspected.setText(tmp[2]+"명");
             Test.setText(tmp[3]+"명");
+            tmp[4] = "";
+            boolean b = false;
+            String temp = "";
+            for( int i = 0; i < list2.length(); i++){
+                temp = list2.substring(i, i+1);
+                if ( temp.equals("+") ){
+                    b = true;
+                    continue;
+                }
+                if ( b ) {
+                    if (temp.equals(")")) {
+                        break;
+                    }
+                    tmp[4] += temp;
+                }
+            }
+            Test.setText(tmp[4]);
         }
     }
 }
