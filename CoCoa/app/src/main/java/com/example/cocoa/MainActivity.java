@@ -36,13 +36,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*
+
         Infected = (TextView)findViewById(R.id.infected);
         Dead = (TextView)findViewById(R.id.dead);
-        Suspected = (TextView)findViewById(R.id.suspected);
+        Suspected = (TextView)findViewById(R.id.suspect);
         Test = (TextView)findViewById(R.id.test);
-*/
-        DataLoad();
+        try {
+            DataLoad();
+        }
+        catch (Exception e){
+
+
+        }
     }
 
     public void DataLoad() {
@@ -77,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             String[] tmp;
             tmp = list.split("명");
-            //Infected.setText(tmp[0]+"명");
-            //Dead.setText(tmp[1]+"명");
-            //Suspected.setText(tmp[2]+"명");
-            //Test.setText(tmp[3]+"명");
+            Infected.setText(tmp[0]+"명");
+            Dead.setText(tmp[1]+"명");
+            Suspected.setText(tmp[2]+"명");
+            Test.setText(tmp[3]+"명");
         }
     }
 /*

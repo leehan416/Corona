@@ -6,104 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+-->
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="602dp"
+        android:layout_weight="10"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/infected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:background="@drawable/infected_oval"
-        android:gravity="center"
-        android:text="void"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.342"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/dead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:background="@drawable/infected_oval"
-        android:gravity="center"
-        android:text="void"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.757"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="sdfsdfads" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/suspect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:background="@drawable/infected_oval"
-        android:gravity="center"
-        android:text="void"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.261"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center">
 
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="68dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="208dp"
-        android:background="@drawable/infected_oval"
-        android:gravity="center"
-        android:text="void"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.715"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/infected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rect"
+                android:text="void" />
 
-    <TextView
-        android:layout_width="258dp"
-        android:layout_height="29dp"
-        android:background="@drawable/rec"
-        android:text=""
-        tools:layout_editor_absoluteX="-9dp"
-        tools:layout_editor_absoluteY="296dp" />
+            <TextView
+                android:id="@+id/dead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rect"
+                android:text="void" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/move"
-        android:layout_width="87dp"
-        android:layout_height="42dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="290dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/goweb"
-        android:layout_width="356dp"
-        android:layout_height="76dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="485dp" />
+            <TextView
+                android:id="@+id/suspect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rect"
+                android:text="TextView"
+                />
 
-    <TextView
-        android:id="@+id/othercountry"
-        android:layout_width="321dp"
-        android:layout_height="146dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="332dp" />
+            <TextView
+                android:id="@+id/test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rect"
+                android:text="TextView" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--/ScrollView-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
