@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    String list = "";
     String list2 = "";
     private class JsoupAsyncTask extends AsyncTask<Void, Void, Void> {
         @Override
