@@ -1,9 +1,0 @@
-apply plugin: 'java-library'
-
-
-sourceCompatibility = "7"
-targetCompatibility = "7"
-
-dependencies {
-    implementation project(path: ':app')
-}
