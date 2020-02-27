@@ -10,13 +10,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2.5"
+        android:layout_weight="10"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:orientation="vertical">
 
             <TextView
@@ -45,84 +45,74 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="bottom|center"
-                android:layout_weight="1"
+            <TextView
+                android:id="@+id/infected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rect"
+                android:fontFamily="@font/goyang"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/font"
+                android:textSize="30dp" />
 
+            <TextView
+                android:id="@+id/test"
+                android:textColor="@color/font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
 
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/infected"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-
-                    android:background="@drawable/rect"
-                    android:fontFamily="@font/goyang"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/font"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:id="@+id/test"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/rect0"
-
-                    android:fontFamily="@font/goyang"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/font"
-                    android:textSize="30dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/suspect"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/rect1"
-                    android:fontFamily="@font/goyang"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/font"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:id="@+id/dead"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/rect2"
-
-                    android:fontFamily="@font/goyang"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/font"
-                    android:textSize="30dp" />
-            </LinearLayout>
+                android:fontFamily="@font/goyang"
+                android:background="@drawable/rect0"
+                android:gravity="center"
+                android:text=""
+                android:textSize="30dp" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/suspect"
+                android:textColor="@color/font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/goyang"
+                android:background="@drawable/rect1"
+                android:gravity="center"
+                android:text=""
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/dead"
+                android:textColor="@color/font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="15dp"
+
+                android:background="@drawable/rect2"
+                android:fontFamily="@font/goyang"
+                android:gravity="center"
+                android:text=""
+                android:textSize="30dp" />
+        </LinearLayout>
     </LinearLayout>
 
 
