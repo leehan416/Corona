@@ -41,16 +41,20 @@ public class MainActivity extends AppCompatActivity {
         Test = (TextView)findViewById(R.id.test);
         try {
             DataLoad();
-        }
-        catch (Exception e){
+        } catch (Exception e){
         }
     }
 
     public void DataLoad() {
+        try {
         list = "";
         list2 = "";
         JsoupAsyncTask jsoupAsyncTask = new JsoupAsyncTask();
         jsoupAsyncTask.execute();
+        } catch (Exception p){
+            Today_1.setText("Error :(");
+        }
+
     }
 
     String list2 = "";
