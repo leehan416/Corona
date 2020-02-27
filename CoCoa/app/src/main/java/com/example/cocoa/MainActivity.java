@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     if (temp.equals(")")) {
                         break;
                     }
-                    tmp[4] += temp;  
+                    tmp[4] += temp;
                 }
             }
             Today_1.setText("\n오늘의 추가 확진자는");
