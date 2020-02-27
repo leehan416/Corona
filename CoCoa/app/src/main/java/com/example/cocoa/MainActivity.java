@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                     tmp[4] += temp;
                 }
             }
-            Today_1.setText("\n오늘의 추가 확진자는");
+            Today_1.setText("\n최근 추가 확진자는");
             Today.setText(tmp[4]+"명 입니다.");
         }
     }
