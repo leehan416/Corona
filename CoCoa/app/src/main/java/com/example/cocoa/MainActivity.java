@@ -88,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-            String[] tmp = new String[5];
-
+            String[] tmp;
+            String s = "";
 
             tmp = list.split("명");
 
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             tmp[1] = tmp[1].substring(11, tmp[1].length()).trim();
             tmp[2] = tmp[2].substring(5, tmp[2].length()).trim();
             tmp[3] = tmp[3].substring(6, tmp[3].length()).trim();
-            tmp[4] = ""; // 이거가 오늘 숫자
+
 
             Infected.setText("확진환자\n"+ tmp[0] +"명");
             Dead.setText("격리해제\n"+ tmp[1] +"명");
@@ -116,11 +116,11 @@ public class MainActivity extends AppCompatActivity {
                     if (temp.equals(")")) {
                         break;
                     }
-                    tmp[4] += temp;
+                    s += temp;
                 }
             }
             Today_1.setText("\n최근 추가 확진자는");
-            Today.setText(tmp[4]+"명 입니다.");
+            Today.setText(s+"명 입니다.");
         }
     }
 }
