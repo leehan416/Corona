@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             boolean b = false;
             String temp = "";
             Today_1.setText("\n최근 추가 확진자는");
-            Today.setText("+"+list2+"명 입니다.");
+            Today.setText(list2+"명 입니다.");
             /*
             for( int i = 0; i < list2.length(); i++){
                 temp = list2.substring(i, i+1);
