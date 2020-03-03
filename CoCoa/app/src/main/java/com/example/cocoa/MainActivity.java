@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     String Url = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=&brdGubun=&ncvContSeq=&contSeq=&board_id=&gubun=";
 
-    String Url2 = "http://www.coronanow.kr/";
+    String Url2 = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun=";
 
     String list = "";
     String list2 = "";
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 doc = Jsoup.connect(Url2).get();
-                titles = doc.select("div[class=card-body2]").eq(1);
+                titles = doc.select("div[class=data_table tbl_scrl_mini2 mgt24]").select("tr[class=sumline]").select("td[class=number]").eq(0);
                 for (Element e : titles) {
                     list2 += e.text().trim();
                 }
@@ -110,6 +110,9 @@ public class MainActivity extends AppCompatActivity {
 
             boolean b = false;
             String temp = "";
+            Today_1.setText("\n최근 추가 확진자는");
+            Today.setText("+"+list2+"명 입니다.");
+            /*
             for( int i = 0; i < list2.length(); i++){
                 temp = list2.substring(i, i+1);
                 if ( temp.equals("+") ){
@@ -123,8 +126,8 @@ public class MainActivity extends AppCompatActivity {
                     s += temp;
                 }
             }
-            Today_1.setText("\n최근 추가 확진자는");
-            Today.setText(s+"명 입니다.");
+            */
+            //Today.setText(s+"명 입니다.");
         }
     }
 }
