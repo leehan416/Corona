@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 doc = Jsoup.connect(Url2).get();
-                titles = doc.select("div[class=data_table tbl_scrl_mini2 mgt24]").select("tr[class=sumline]").select("td[class=number]").eq(0);
+                //titles = doc.select("div[class=data_table tbl_scrl_mini2 mgt24]").select("tr[class=sumline]").select("td[class=number]").eq(0);
+                titles = doc.select("div[class=data_table mgt24]").select("tr[class=sumline]").select("td[class=number]").eq(0);
                 for (Element e : titles) {
                     list2 += e.text().trim();
                 }
