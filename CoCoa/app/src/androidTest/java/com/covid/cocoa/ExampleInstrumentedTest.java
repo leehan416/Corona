@@ -1,4 +1,4 @@
-package com.example.cocoa;
+package com.covid.cocoa;
 
 import android.content.Context;
 

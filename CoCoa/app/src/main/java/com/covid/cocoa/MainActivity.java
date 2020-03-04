@@ -1,8 +1,7 @@
-package com.example.cocoa;
+package com.covid.cocoa;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.ViewDebug;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
