@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 Document doc = Jsoup.connect(Url).get();
                 Elements titles = doc.select("table.num").eq(0).select("tbody");//.select("td[class=w_bold]");
 
+              //  titles = doc.select("div[class=data_table mgt16]").select("tr[class=sumline]").select("td[class=number]").eq(0);
+
+
                 for (Element e : titles) {
                     list += e.select("td").text().trim() + "\n";
                 }
