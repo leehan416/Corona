@@ -68,15 +68,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                Document doc = Jsoup.connect(Url).get();
-                Elements titles = doc.select("table.num").eq(0).select("tbody");//.select("td[class=w_bold]");
+               Document doc = Jsoup.connect(Url).get();
+
+                Elements titles = doc.select("table.num").eq(0).select("tbody").select("tr");//.select("td[class=w_bold]");
 
               //  titles = doc.select("div[class=data_table mgt16]").select("tr[class=sumline]").select("td[class=number]").eq(0);
 
 
                 for (Element e : titles) {
-                    list += e.select("td").text().trim() + "\n";
+                    list += ( e.text().trim() );
                 }
+
 
                 doc = Jsoup.connect(Url2).get();
                 //titles = doc.select("div[class=data_table tbl_scrl_mini2 mgt24]").select("tr[class=sumline]").select("td[class=number]").eq(0);
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 for (Element e : titles) {
                     list2 += e.text().trim();
                 }
+
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -97,11 +100,14 @@ public class MainActivity extends AppCompatActivity {
             String s = "";
 
             try {
-                tmp = list.split("명");
+                tmp = list.split(" ");
+                /*
                 tmp[0] = tmp[0].substring(5, tmp[3].length()).trim();
                 tmp[1] = tmp[1].substring(9, tmp[1].length()).trim();
                 tmp[2] = tmp[2].substring(4, tmp[2].length()).trim();
                 tmp[3] = tmp[3].substring(5, tmp[3].length()).trim();
+                */
+
             } catch (Exception e){
             }
 
