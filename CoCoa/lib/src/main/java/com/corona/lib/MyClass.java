@@ -1,4 +1,4 @@
-package com.covid.lib;
+package com.corona.lib;
 
 public class MyClass {
 }

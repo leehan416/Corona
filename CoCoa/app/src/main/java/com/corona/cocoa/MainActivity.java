@@ -1,4 +1,4 @@
-package com.covid.cocoa;
+package com.corona.cocoa;
 
 import android.os.AsyncTask;
 import android.os.Bundle;

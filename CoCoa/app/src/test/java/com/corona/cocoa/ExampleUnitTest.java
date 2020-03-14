@@ -1,4 +1,4 @@
-package com.covid.cocoa;
+package com.corona.cocoa;
 
 import org.junit.Test;
 
