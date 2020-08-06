@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                Document doc = Jsoup.connect(Url).get();
 
-                Elements titles = doc.select("table.num").eq(0).select("tbody").select("tr");//.select("td[class=w_bold]");
+                Elements titles = doc.select("div[class=caseTable]").eq(0);//.select("td[class=w_bold]");
 
               //  titles = doc.select("div[class=data_table mgt16]").select("tr[class=sumline]").select("td[class=number]").eq(0);
 
@@ -111,16 +111,16 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e){
             }
 
-            Infected.setText("확진환자\n"+ tmp[0] +"명");
-            Dead.setText("격리해제\n"+ tmp[1] +"명");
-            Suspected.setText("사망자\n"+tmp[2] +"명");
-            Test.setText("검사진행\n" + tmp[3] +"명");
+            Infected.setText("확진환자\n"+ tmp[2] +"명");
+            Dead.setText("격리해제\n"+ tmp[13] +"명");
+            Suspected.setText("사망자\n"+tmp[25] +"명");
+            Test.setText("검사진행\n" + tmp[19] +"명");
 
 
             boolean b = false;
             String temp = "";
             Today_1.setText("\n최근 추가 확진자는");
-            Today.setText(list2+"명 입니다.");
+            Today.setText(tmp[6]+"명 입니다.");
             /*
             for( int i = 0; i < list2.length(); i++){
                 temp = list2.substring(i, i+1);
